@@ -58,8 +58,8 @@ function Login({ leaving, onEnter }: { leaving: boolean; onEnter: () => void }) 
       <div className="absolute inset-0 bg-ink/40" />
       <div className="absolute inset-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: `url(${loginBackground})` }} />
       <div className="absolute inset-0 bg-veil" />
-      <div className="relative flex h-full items-end justify-center px-6 pb-16 sm:items-center sm:pb-0">
-        <form onSubmit={submit} className="rise w-full max-w-xs space-y-5 rounded-2xl border border-cream/20 bg-ink/40 p-8 backdrop-blur-md">
+      <div className="relative flex h-full items-end justify-center px-6 pb-12 lg:items-center lg:justify-end lg:px-20 lg:pb-0">
+        <form onSubmit={submit} className="rise w-full max-w-xs space-y-5 rounded-2xl border border-cream/20 bg-ink/60 p-8 backdrop-blur-md">
           <p className="text-center font-display text-2xl italic text-cream">para você</p>
           <input value={name} onChange={(e) => { setName(e.target.value); setErr(false); }}
             placeholder="seu nome" autoComplete="off" className="field" />
