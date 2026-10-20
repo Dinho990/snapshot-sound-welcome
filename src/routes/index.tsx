@@ -56,9 +56,9 @@ function Login({ leaving, onEnter }: { leaving: boolean; onEnter: () => void }) 
     <div className={`fixed inset-0 z-50 transition-all duration-1000 ${leaving ? "opacity-0 scale-105" : "opacity-100"}`}>
       <div className="absolute inset-0 scale-125 bg-cover bg-center blur-2xl" style={{ backgroundImage: `url(${loginBackground})` }} />
       <div className="absolute inset-0 bg-ink/40" />
-      <div className="absolute inset-0 bg-contain bg-top bg-no-repeat lg:bg-center" style={{ backgroundImage: `url(${loginBackground})` }} />
+      <div className="absolute inset-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: `url(${loginBackground})` }} />
       <div className="absolute inset-0 bg-veil" />
-      <div className="relative flex h-full items-end justify-center px-6 pb-12 lg:items-center lg:justify-end lg:px-20 lg:pb-0">
+      <div className="relative flex h-full items-center justify-center px-6">
         <form onSubmit={submit} className="rise w-full max-w-xs space-y-5 rounded-2xl border border-cream/20 bg-ink/60 p-8 backdrop-blur-md">
           <p className="text-center font-display text-2xl italic text-cream">para você</p>
           <input value={name} onChange={(e) => { setName(e.target.value); setErr(false); }}
