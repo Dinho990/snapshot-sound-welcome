@@ -167,8 +167,8 @@ function Main({ audioRef }: { audioRef: React.RefObject<HTMLAudioElement | null>
       )}
       {photo !== null && (
         <div className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-ink/85 p-4" onClick={() => setPhoto(null)}>
-          <img src={gallery[photo].src} alt={gallery[photo].caption} className="fade-in max-h-[80vh] max-w-full" />
-          <p className="mt-4 font-display italic text-cream">{gallery[photo].caption}</p>
+          <img src={gallery[photo]!.src} alt={gallery[photo]!.caption} className="fade-in max-h-[80vh] max-w-full" />
+          <p className="mt-4 font-display italic text-cream">{gallery[photo]!.caption}</p>
         </div>
       )}
     </main>
