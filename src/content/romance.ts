@@ -5,8 +5,8 @@ export const access = { name: "Miko", password: "Sorvetedechocolate" };
 
 export const loginBackground = loginBg.url;
 
-// Quando o MP3 chegar, coloque a URL aqui (ex.: import song from "@/assets/musica.mp3.asset.json"; song.url)
-export const music = { url: "" as string, title: "nossa música" };
+import song from "@/assets/musica.mp3.asset.json";
+export const music = { url: song.url as string, title: "u will be my girl" };
 
 export const opening = {
   title: "Fiz um cantinho no mundo para você.",
