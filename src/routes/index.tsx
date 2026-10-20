@@ -36,7 +36,7 @@ function Index() {
 
   return (
     <>
-      {music.url && <audio ref={audioRef} src={music.url} loop preload="auto" />}
+      {music.url && <audio ref={audioRef} src={music.url} loop preload="auto" playsInline />}
       {stage !== "in" && <Login leaving={stage === "leaving"} onEnter={enter} />}
       {stage !== "login" && <Main audioRef={audioRef} />}
     </>
