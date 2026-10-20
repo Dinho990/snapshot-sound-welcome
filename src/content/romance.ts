@@ -1,5 +1,5 @@
 // Todo o conteúdo editável do site fica aqui.
-import loginBg from "@/assets/login-bg.webp.asset.json";
+import loginBg from "@/assets/login-bg.jpg.asset.json";
 
 export const access = { name: "miko", password: "sorvetedechocolate" };
 
