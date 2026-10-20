@@ -51,6 +51,14 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  --color-wine: var(--wine);
+  --color-rose: var(--rose);
+  --color-gold: var(--gold);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --font-display: "Cormorant Garamond", serif;
+  --font-sans: "Karla", sans-serif;
+  --shadow-paper: 0 10px 30px -12px color-mix(in oklab, var(--ink) 35%, transparent);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -63,23 +71,28 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --wine: oklch(0.42 0.12 18);
+  --rose: oklch(0.68 0.07 15);
+  --gold: oklch(0.68 0.09 75);
+  --cream: oklch(0.97 0.02 80);
+  --ink: oklch(0.2 0.03 30);
+  --background: oklch(0.965 0.018 80);
+  --foreground: oklch(0.28 0.04 40);
+  --card: oklch(0.985 0.012 85);
+  --card-foreground: oklch(0.28 0.04 40);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
   --primary: oklch(0.208 0.042 265.755);
   --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
+  --secondary: oklch(0.93 0.03 40);
+  --secondary-foreground: oklch(0.28 0.04 40);
+  --muted: oklch(0.92 0.02 60);
+  --muted-foreground: oklch(0.45 0.04 40);
   --accent: oklch(0.968 0.007 247.896);
   --accent-foreground: oklch(0.208 0.042 265.755);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
+  --border: oklch(0.88 0.03 60);
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -142,3 +155,23 @@
     color: var(--color-foreground);
   }
 }
+
+body { font-family: var(--font-sans); }
+.bg-veil { background: linear-gradient(180deg, color-mix(in oklab, var(--ink) 30%, transparent), color-mix(in oklab, var(--ink) 65%, transparent)); }
+.paper { background-image: radial-gradient(color-mix(in oklab, var(--ink) 4%, transparent) 1px, transparent 1px); background-size: 4px 4px; }
+.field { width: 100%; background: transparent; border: 0; border-bottom: 1px solid color-mix(in oklab, var(--cream) 40%, transparent); padding: .6rem .2rem; color: var(--cream); outline: none; text-align: center; letter-spacing: .05em; transition: border-color .3s; }
+.field::placeholder { color: color-mix(in oklab, var(--cream) 60%, transparent); font-style: italic; }
+.field:focus { border-color: var(--gold); }
+.letter { background: linear-gradient(180deg, var(--card), oklch(0.95 0.025 75)); border: 1px solid var(--border); border-radius: 4px; padding: 2rem; box-shadow: var(--shadow-paper); transition: transform .4s, box-shadow .4s; cursor: pointer; }
+.letter:hover { transform: translateY(-4px) rotate(0deg); }
+button, a { cursor: pointer; }
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+@keyframes unfold { from { opacity: 0; transform: scaleY(.85) translateY(20px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 1.2s ease both; }
+.rise:nth-child(2) { animation-delay: .2s } .rise:nth-child(3) { animation-delay: .4s } .rise:nth-child(4) { animation-delay: .7s }
+.fade-in { animation: fadein 1.2s ease both; }
+.open-letter { animation: unfold .5s ease both; transform-origin: top; cursor: auto; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
+.reveal.shown { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
