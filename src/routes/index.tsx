@@ -189,7 +189,7 @@ function Note({ text, i }: { text: string; i: number }) {
   return (
     <button onClick={() => setOpen((o) => !o)}
       className={`reveal flex aspect-square items-center justify-center rounded-md p-4 text-center shadow-paper transition-all duration-500 hover:-translate-y-1 ${open ? "bg-card" : "bg-rose"}`}
-      style={{ rotate: `${(i % 3) - 1 * 2}deg` }}>
+      style={{ rotate: `${((i % 3) - 1) * 2}deg` }}>
       {open ? <span className="fade-in font-display text-lg leading-snug text-wine">{text}</span>
         : <span className="font-display text-3xl italic text-cream">✉</span>}
     </button>
