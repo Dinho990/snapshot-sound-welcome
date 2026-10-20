@@ -1,7 +1,7 @@
 // Todo o conteúdo editável do site fica aqui.
 import loginBg from "@/assets/login-bg.jpg.asset.json";
 
-export const access = { name: "miko", password: "sorvetedechocolate" };
+export const access = { name: "Miko", password: "Sorvetedechocolate" };
 
 export const loginBackground = loginBg.url;
 
