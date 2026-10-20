@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
 });
 
 export function checkAccess(name: string, pass: string) {
-  return name.toLowerCase() === access.name && pass.toLowerCase() === access.password;
+  return name.trim().toLowerCase() === access.name.toLowerCase() && pass.trim().toLowerCase() === access.password.toLowerCase();
 }
 
 function Index() {
