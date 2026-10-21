@@ -154,7 +154,7 @@ function Main({ audioRef }: { audioRef: React.RefObject<HTMLAudioElement | null>
         <p className="reveal mt-12 font-display text-xl italic text-gold">{closing.signature}</p>
       </section>
 
-      <footer className="border-t border-border/60 px-6 py-10 text-center">
+      <footer className="border-t border-border/60 px-6 pt-10 pb-28 text-center md:pb-10">
         <p className="font-display text-sm italic tracking-wide text-muted-foreground/80">
           feito com carinho ♡
         </p>
